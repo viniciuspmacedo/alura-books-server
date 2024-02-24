@@ -1,10 +1,9 @@
 const { Router } = require('express')
+const { getLivros } = require('../controladores/livro')
 
 const router = Router()
 
-router.get('/', (_, res)=>{
-    res.send("Esta é a rota GET!")
-})
+router.get('/', getLivros)
 
 router.post('/', (_, res)=>{
     res.send("Esta é a rota POST!")
