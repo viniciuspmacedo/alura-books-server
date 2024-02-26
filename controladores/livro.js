@@ -75,6 +75,7 @@ function deleteLivro(req, res) {
         if (apagaLivro(id)) {
             res.send("Livro apagado com sucesso")
         } else{
+            res.status(422)
             res.send(`Livro com id ${id} não foi encontrado`)
         }
 
