@@ -1,19 +1,16 @@
 const { Router } = require('express')
-const { getLivros } = require('../controladores/livro')
+const { getLivros, getLivro, postLivro, patchLivro, deleteLivro } = require('../controladores/livro')
 
 const router = Router()
 
+
+router.get('/:id', getLivro)
 router.get('/', getLivros)
 
-router.post('/', (_, res)=>{
-    res.send("Esta é a rota POST!")
-})
+router.post('/', postLivro)
 
-router.patch('/', (_, res)=>{
-    res.send("Esta é a rota PATCH!")
-})
+router.patch('/:id', patchLivro)
 
-router.delete('/', (_, res)=>{
-    res.send("Esta é a rota DELETE!")
-})
+router.delete('/:id', deleteLivro)
+
 module.exports = router
