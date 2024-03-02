@@ -48,7 +48,7 @@ function apagaLivro(id) {
         const livrosFiltrados = livrosAtuais.filter(livro => livro.id !== id)
         fs.writeFileSync(file, JSON.stringify(livrosFiltrados))
         return true
-    } else {
+    } else {    
         return false
     }
 
